@@ -12,3 +12,4 @@ export const TOGGLE_POST_LOADING = "POST_LOADING";
 export const GET_POSTS = "GET_POSTS";
 export const RESET_POST = "RESET_POST";
 export const TOGGLE_POSTS_LOADING = "POSTS_LOADING";
+export const GET_ALLPOSTS = "GET_ALLPOSTS";

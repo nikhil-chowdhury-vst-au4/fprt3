@@ -18,8 +18,6 @@ const Post = ({ post }) => {
    );
 };
 
-Post.propTypes = {
-   post: PropTypes.object.isRequired
-};
+
 
 export default Post;

@@ -3,6 +3,7 @@ import {
    CREATE_POST,
    GET_POST,
    GET_POSTS,
+   GET_ALLPOSTS,
    UPDATE_POST,
    DELETE_POST,
    TOGGLE_POSTS_LOADING,
@@ -12,6 +13,7 @@ import {
 const initialState = {
    post: {},
    posts: [],
+   allposts: [],
    postLoading: false,
    postsLoading: false
 };
@@ -29,6 +31,13 @@ export default function(state = initialState, action) {
             post: {},
             posts: [...action.payload]
          };
+
+         case GET_ALLPOSTS:
+            return {
+               ...state,
+              
+               allposts: [...action.payload]
+            };
       case GET_POST:
          return {
             ...state,

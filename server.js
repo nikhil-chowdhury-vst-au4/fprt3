@@ -15,9 +15,9 @@ app.use(bodyParser.json());
 // db configuration
 const MONGO_URI = process.env.MONGO_URI;
 mongoose
-   .connect(MONGO_URI, { useNewUrlParser: true })
-   .then(() => console.log("Mongo Connection successful"))
-   .catch(err => console.log("err"));
+  .connect(MONGO_URI, { useNewUrlParser: true })
+  .then(() => console.log("Mongo Connection successful"))
+  .catch((err) => console.log("err"));
 
 mongoose.set("useFindAndModify", false);
 mongoose.Promise = global.Promise;
@@ -28,10 +28,10 @@ app.use("/api/users", users);
 app.use("/api/posts/", require("./routes/api/posts"));
 
 if (process.env.NODE_ENV === "production") {
-   app.use(express.static("client/build"));
-   app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-   });
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
 }
 
 const PORT = process.env.PORT || 5000;
